@@ -1,0 +1,38 @@
+.titulo{
+    font-size: 1.8rem;
+}
+.contenedor-propuesta{
+    padding: 1rem;
+}
+
+.container1 {
+    width: 100%;
+    display: flex;
+    max-width: 1100px;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+.card {
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #ffffff30;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
+
+}
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3%);
+}
+.card img {
+    width: 20%;
+    height: 75px;
+}
+.contenido1{
+    justify-content:baseline;
+    text-align: justify; 
+}

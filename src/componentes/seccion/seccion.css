@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2? family= Inter:wght@300 & family= Raleway:wght@300 & display=swap');
+
+:root {
+
+    --dark-solid:#1F1F1F; 
+    --dark-900: rgb(31,31,31,0.9);
+    --dark-500: rgb(31,31,31,0.5);
+    --dark-300: rgb(31,31,31,0.3);
+
+    --dark-bg-solid: #30343f;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #FFFFFF;
+
+    --base-font: 'Inter', sans-serif;
+    --alternative-font:'Raleway', sans-serif;
+
+    --font-display:4.6em;
+    --font-jumbo:3.8em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
+
+    --spacing-128: 12.8rem;  
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;   
+    --spacing-8: 0.8rem;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:var(--base-font);
+    font-size: 62.5%;
+    color: var(--dark-solid);
+}
+
+a{
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+header,footer{
+    font-family: var(--alternative-font);
+    color: var(--light-font-solid);
+}
+
+ul,ol{
+    list-style-type: none;
+}
+
+p {
+    font-size: 1.6em;
+}
+
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+video{
+    position: relative;
+    width: 100vw;
+}
+
+.nosotros{
+    display: grid;  
+    grid-template-columns: 30% 30% 40%;
+    padding-top: 5rem;
+}
+.nosotros_contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem;
+
+    
+}
+.nosotros_titulo{
+    font-family: var(--base-font);
+    font-size: var(--font-large);
+
+}
+.nosotros_texto{
+    text-align: justify;
+}
+.brindis{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin: auto;
+    width: 100%;
+}
+.brindis_img{
+    width: 440px;
+    height: 350px;
+}
+.socios{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.socios_titulos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+}
+.socios_h2{
+    font-family: var(--base-font);
+    font-size: var(--font-xlarge);
+}
+.socios_h3{
+    font-family: var(--alternative-font);
+    font-size: var(--font-large);
+}
+.socios_contenido{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 5rem;
+    align-items: end;
+}
+.socio_imagen{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin: auto;
+    width: 100%;
+}
+.socio_img1{
+    border-style: inset;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 1500px;
+    -webkit-border-radius: 1250px;
+    -moz-border-radius: 1250px;
+    -ms-border-radius: 1250px;
+    -o-border-radius: 1250px;
+    width: 80%;
+}
+.socio_img2{
+    border-style: inset;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    -ms-border-radius: 150px;
+    -o-border-radius: 150px;
+    width: 70%;
+}
+.socio_texto{
+    text-align: justify;
+    padding-bottom: 3rem;
+}
+.socio_firma{
+    text-align: end;
+    padding-top: 2rem;
+}

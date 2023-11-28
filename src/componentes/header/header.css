@@ -1,0 +1,99 @@
+
+:root {
+
+    --dark-solid:#1F1F1F; 
+    --dark-900: rgb(31,31,31,0.9);
+    --dark-500: rgb(31,31,31,0.5);
+    --dark-300: rgb(31,31,31,0.3);
+
+    --dark-bg-solid: #30343f;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #FFFFFF;
+
+    --base-font: 'Inter', sans-serif;
+    --alternative-font:'Raleway', sans-serif;
+
+    --font-display:4.6em;
+    --font-jumbo:3.8em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
+
+    --spacing-128: 12.8rem;  
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;   
+    --spacing-8: 0.8rem;
+}
+
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--alternative-font);
+}
+
+.nav-b {
+    background-color: var(--dark-bg-solid);
+    width: 100vw;
+}
+
+.contenedor {
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.header_navegacion {
+    height: 117px;
+    color: var(--light-font-solid);
+    font-size: var(--font-medium);   
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .header_navegacion {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+}
+
+.navegacion ul {
+    display: flex;
+}
+
+.navegacion ul li { 
+    padding-left: 30px;
+    font-size: var(--font-xsmall);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navegacion ul li {
+        font-size: 19px;
+        padding-bottom: 20px;
+    }
+}
+
+li:hover,
+a:hover {
+    color: coral;
+}
