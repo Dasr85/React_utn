@@ -74,11 +74,12 @@ ul,ol{
 p {
     font-size: 1.6em;
 }
-
-
-
+.hero img {
+    width: 100%;
+}
 .container{
     max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -87,23 +88,23 @@ video{
     width: 100vw;
 }
 
-.nosotros{
-    display: grid;  
-    grid-template-columns: 30% 30% 40%;
-    padding-top: 5rem;
+@media (min-width: 768px) {
+    .nosotros {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-top: 5rem;
+    }
 }
-.nosotros_contenido{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 5rem;
 
-    
-}
 .nosotros_titulo{
     font-family: var(--base-font);
     font-size: var(--font-large);
 
+}
+.nosotros_titulo h3 {
+    text-align: center;
+    padding: 3rem 0;
 }
 .nosotros_texto{
     text-align: justify;
@@ -118,20 +119,23 @@ video{
 .brindis_img{
     width: 440px;
     height: 350px;
+    padding-top: 3rem;
 }
-.socios{
+
+.socios_titulos{
+    text-align: center;
+    padding: 4rem 0;  
+    text-transform: uppercase;
+}
+
+/*.socios{
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
-}
-.socios_titulos{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    
-}
+}*/
+
 .socios_h2{
     font-family: var(--base-font);
     font-size: var(--font-xlarge);
@@ -140,7 +144,7 @@ video{
     font-family: var(--alternative-font);
     font-size: var(--font-large);
 }
-.socios_contenido{
+/*.socios_contenido{
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -153,7 +157,16 @@ video{
     place-items: center;
     margin: auto;
     width: 100%;
+}*/
+@media (min-width: 768px) {
+    .socios_contenido {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
+
 .socio_img1{
     border-style: inset;
     border-width: 2px;
@@ -163,18 +176,18 @@ video{
     -moz-border-radius: 1250px;
     -ms-border-radius: 1250px;
     -o-border-radius: 1250px;
-    width: 80%;
+    width: 40rem;
 }
 .socio_img2{
     border-style: inset;
     border-width: 2px;
     border-color: aqua;
-    border-radius: 150px;
-    -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    -ms-border-radius: 150px;
-    -o-border-radius: 150px;
-    width: 70%;
+    border-radius: 1500px;
+    -webkit-border-radius: 1250px;
+    -moz-border-radius: 1250px;
+    -ms-border-radius: 1250px;
+    -o-border-radius: 1250px;
+    width: 40rem;
 }
 .socio_texto{
     text-align: justify;
@@ -182,5 +195,5 @@ video{
 }
 .socio_firma{
     text-align: end;
-    padding-top: 2rem;
+    padding: 2rem 0;
 }
