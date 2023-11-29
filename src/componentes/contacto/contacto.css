@@ -1,0 +1,93 @@
+:root {
+
+    --dark-solid:#1F1F1F; 
+    --dark-900: rgb(31,31,31,0.9);
+    --dark-500: rgb(31,31,31,0.5);
+    --dark-300: rgb(31,31,31,0.3);
+
+    --dark-bg-solid: #30343f;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #FFFFFF;
+
+    --base-font: 'Inter', sans-serif;
+    --alternative-font:'Raleway', sans-serif;
+
+    --font-display:4.6em;
+    --font-jumbo:3.8em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
+
+    --spacing-128: 12.8rem;  
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;   
+    --spacing-8: 0.8rem;
+}
+
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-68) var(--spacing-12);
+}
+
+.formulario__estilo{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    border: solid 2px #000;
+    border-radius: 50px;
+    padding: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.form__texto{
+    display: flex;
+    box-sizing: content-box;
+    align-items: center;
+    gap: var(--spacing-8);
+    position: relative;
+}
+
+.form__txt{
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+}
+
+.form__input{
+    /* width: 100%; */
+    padding: 5px;
+    box-sizing: content-box;
+    border: inset #2B2E37 2px;
+    border-radius: 5px;
+    font-family: var(--alternative-font-family);
+    font-size: var(--font-small);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.form__boton{
+    align-self: center;
+    padding: var(--spacing-8);
+    
+    padding: 10px 20px;
+    margin: 6px 0;
+    font-family: var(--alternative-font-family);
+    font-weight: 500;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid var(--dark-bg-solid);
+    border-radius: 25px;
+}
