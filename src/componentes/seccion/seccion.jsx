@@ -1,5 +1,5 @@
 import React from 'react';
-import video from '../../assets/video/Hero.mp4';
+import img from '../../assets/img/woman-vinos.jpg';
 import brindis from '../../assets/img/brindis.jpg';
 import martin from '../../assets/img/Martin R.jpg';
 import rocio from '../../assets/img/Rocio F.jpg';
@@ -9,7 +9,7 @@ const seccion = () => {
     <>
     {/* Hero  */}
     <div className='hero'>
-        < video src={video} controls loop />
+        < img src={img} controls loop />
     </div>
     {/* Contenido de la pagina  */}
     <div className='container'>
@@ -26,16 +26,16 @@ const seccion = () => {
             </div>
             <p className='nosotros_texto'>Salir de la pretensión puramente comercial de la fórmula de " los vinos más vendidos". Para aventurarnos en la búsqueda de aquellas producciones cuidadas, de alta personalidad, que sean referentes sinceros de nuestros terruños. De las producciones más arriesgadas de prestigiosos maestros consagrados, como las de una creciente hondada de jóvenes enólogos, que marcaran su impronta, a causa de su pasión y su arte.</p>
         </div>
-    <div className="brindis">
-        <img  className= "brindis_img" src={brindis} />
-    </div>
+        <div className="brindis">
+            <img  className= "brindis_img" src={brindis} />
+        </div>
     </section>
     
-    <div className="socios">
-        <div className='socios_titulos'>
-            <h2 className='socios_h2'>100% SOCIOS SATISFECHOS</h2>
-            <h3 className='socios_h3'>CONOCÉ LA EXPERIENCIA DE NUESTROS SOCIOS CON EL CLUB</h3>
+    <div className='socios_titulos'>
+            <h2 className='socios_h2'>100% socios  satisfechos</h2>
+            <p className='socios_h3'>conocé la experiencia de nuestros socios con el club</p>
         </div>
+    <div className="socios">
         <div className="socios_contenido">
             <div className='socio_imagen'>
                 <img className='socio_img1' src={martin} alt="Martin R" />
