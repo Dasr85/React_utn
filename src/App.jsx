@@ -3,7 +3,8 @@ import './App.css'
 import Header from './componentes/header/header';
 import Seccion from './componentes/seccion/seccion';
 import Footer from './componentes/footer/footer';
-// import Propuesta from './componentes/propuesta/Propuesta'
+import GestionPropuesta from './componentes/propuesta/GestionPropuesta';
+import ContactForm from './componentes/contacto/contacto';
 
 function App() {
 
@@ -15,8 +16,8 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Seccion />} />
-            {/* <Route path="/Propuesta" element={<Propuesta />} /> */}
-            {/* <Route path="/Contacto" element={<Contacto />} /> */}
+            <Route path="/Propuesta" element={<GestionPropuesta />} />
+            <Route path="/Contacto" element={<ContactForm />} />
           </Routes>
         </main>
         <Footer />

@@ -1,19 +1,19 @@
 
-const Pocion = ({ pocion, completarPocion, eliminarPocion }) => {
+const Vino = ({ vino, completarVino, eliminarVino }) => {
     
-    //Destruturación de Props 'pocion'
-    const { id, nombre, completada } = pocion;
+    //Destruturación de Props 'vino'
+    const { id, nombre, completada } = vino;
 
     const completar = () => {
-        completarPocion(id);
+        completarVino(id);
     };
 
     const eliminar = () => {
-        eliminarPocion(id);
+        eliminarVino(id);
     };
 
     return (
-        <div className="pocion">
+        <div className="vino">
         <span className={completada ? 'completada' : ''}>{nombre}</span>
         <button onClick={completar}>
             {completada ? 'Pendiente' : 'Completar'}
@@ -23,4 +23,4 @@ const Pocion = ({ pocion, completarPocion, eliminarPocion }) => {
     );
 };
 
-export default Pocion;
+export default Vino;

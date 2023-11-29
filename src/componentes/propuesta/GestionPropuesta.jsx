@@ -3,53 +3,53 @@ import './Propuesta.css'
 import camion from '../../assets/img/camion.png';
 import botella from '../../assets/img/botella de vino.png';
 import copa from '../../assets/img/copa de vino.png';
-import ListaDePociones from './ListaDePociones';
-import FormularioDePociones from './FormularioDePociones';
+import ListaDeVinos from './ListaDeVinos';
+import FormularioDeVinos from './FormularioDeVinos';
 
-const GestionPociones = () => {
-    // Estado para almacenar las pociones
-    const [pociones, setPociones] = useState([]);
+const GestionPropuesta = () => {
+    // Estado para almacenar las vinos
+    const [vinos, setVinos] = useState([]);
 
-    // Carga inicial de pociones desde localStorage
+    // Carga inicial de vinos desde localStorage
     useEffect(() => {
         try {
-            const pocionesGuardadas = JSON.parse(localStorage.getItem('pociones'));
-            console.log('Pociones cargadas:', pocionesGuardadas);
-            if (pocionesGuardadas) {
-                setPociones(pocionesGuardadas);
+            const vinosGuardados = JSON.parse(localStorage.getItem('pociones'));
+            console.log('Vinos cargados:', vinosGuardados);
+            if (vinosGuardados) {
+                setVinos(vinosGuardados);
             }
         } catch (error) {
             console.error('Error al cargar datos desde localStorage:', error);
         }
     }, []);
 
-    // Almacena las pociones en localStorage cuando cambia el estado
+    // Almacena los vinos en localStorage cuando cambia el estado
     useEffect(() => {
-        localStorage.setItem('pociones', JSON.stringify(pociones));
-    }, [pociones]);
+        localStorage.setItem('vinos', JSON.stringify(vinos));
+    }, [vinos]);
 
-    // Marcar una poción como completada o no completada
-    const completarPocion = (id) => {
-        const nuevasPociones = pociones.map((pocion) =>
-        pocion.id === id ? { ...pocion, completada: !pocion.completada } : pocion
+    // Marcar un vino como completada o no completada
+    const completarVino = (id) => {
+        const nuevosVinos = vinos.map((vino) =>
+        vino.id === id ? { ...vino, completada: !vino.completada } : vino
         );
-        setPociones(nuevasPociones);
+        setVinos(nuevosVinos);
     };
 
-    // Eliminar una poción de la lista
-    const eliminarPocion = (id) => {
-        const nuevasPociones = pociones.filter((pocion) => pocion.id !== id);
-        setPociones(nuevasPociones);
+    // Eliminar un vino de la lista
+    const eliminarVino = (id) => {
+        const nuevosVinos = vinos.filter((vino) => vino.id !== id);
+        setVinos(nuevosVinos);
     };
 
-    // Agregar una nueva poción a la lista
-    const agregarPocion = (nombre) => {
-        const nuevaPocion = {
+    // Agregar una nuevo vino a la lista
+    const agregarVino = (nombre) => {
+        const nuevoVino = {
         id: Date.now(), // Generar ID único
         nombre,
         completada: false,
         };
-        setPociones([...pociones, nuevaPocion]);
+        setVinos([...vinos, nuevoVino]);
     };
 
     return (
@@ -91,16 +91,16 @@ const GestionPociones = () => {
         </div>   
 
 
-        {/* Lista de Pociones */}
-        <ListaDePociones
-            pociones={pociones}
-            completarPocion={completarPocion}
-            eliminarPocion={eliminarPocion}
+        {/* Lista de Vinos */}
+        <ListaDeVinos
+            vinos={vinos}
+            completarVino={completarVino}
+            eliminarVino={eliminarVino}
         />
-        {/* Formulario para agregar nuevas Pociones */}
-        <FormularioDePociones agregarPocion={agregarPocion} />
+        {/* Formulario para agregar nuevos Vinos */}
+        <FormularioDeVinos agregarVino={agregarVino} />
         </div>
     );
     };
 
-export default GestionPociones;
+export default GestionPropuesta;

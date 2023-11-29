@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-const FormularioDePociones = ({ agregarPocion }) => {
-    const [nuevaPocion, setNuevaPocion] = useState('');
+const FormularioDeVinos = ({ agregarVino }) => {
+    const [nuevaVino, setNuevoVino] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (nuevaPocion.trim() !== '') {
-        agregarPocion(nuevaPocion);
-        setNuevaPocion('');
+        if (nuevaVino.trim() !== '') {
+        agregarVino(nuevoVino);
+        setNuevoVino('');
         }
     };
 
@@ -15,13 +15,13 @@ const FormularioDePociones = ({ agregarPocion }) => {
         <form onSubmit={handleSubmit}>
         <input
             type="text"
-            value={nuevaPocion}
-            onChange={(e) => setNuevaPocion(e.target.value)}
-            placeholder="Nueva Poción"
+            value={nuevaVino}
+            onChange={(e) => setNuevoVino(e.target.value)}
+            placeholder="Nuevo Vino"
         />
         <button type="submit">Agregar</button>
         </form>
     );
     };
 
-export default FormularioDePociones;
+export default FormularioDeVinos;

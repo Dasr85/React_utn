@@ -1,26 +1,26 @@
 import PropTypes from "prop-types";
-import Pocion from "./Pocion";
+import Vino from "./Vino";
 
-const ListaDePociones = ({ pociones, completarPocion, eliminarPocion }) => {
+const ListaDeVinos = ({ vinos, completarVino, eliminarVino }) => {
     return (
         <div>
         <h2> Inventario de Pociones </h2>
-        {pociones.map((pocion) => (
-            <Pocion
-            key={pocion.id}
-            pocion={pocion}
-            completarPocion={completarPocion}
-            eliminarPocion={eliminarPocion}
+        {vinos.map((vino) => (
+            <Vino
+            key={vino.id}
+            pocion={vino}
+            completarPocion={completarVino}
+            eliminarPocion={eliminarVino}
             />
         ))}
         </div>
     );
     };
 
-    ListaDePociones.propTypes = {
-    pociones: PropTypes.array.isRequired,
-    completarPocion: PropTypes.func.isRequired,
-    eliminarPocion: PropTypes.func.isRequired,
+    ListaDeVinos.propTypes = {
+    vinos: PropTypes.array.isRequired,
+    completarVino: PropTypes.func.isRequired,
+    eliminarVino: PropTypes.func.isRequired,
 };
 
-export default ListaDePociones;
+export default ListaDeVinos;
