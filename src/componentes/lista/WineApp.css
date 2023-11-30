@@ -46,12 +46,13 @@
 
 .lista img {
     width: 100%;
-    height: 500px;
+    height: 300px;
     object-fit: cover;
 }
 
 .agrandar-texto {
     font-family: var(--alternative-font);
     font-size: 2rem;
+    text-align: center;
 
 }
