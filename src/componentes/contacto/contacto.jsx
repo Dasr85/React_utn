@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./contacto.css";
+import contacto from "../../assets/img/contacto.jpg"
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -88,66 +89,72 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="formulario" onSubmit={handleSubmit}>
-      <div className="formulario__estilo">
-        <div className="form__texto">
-          <label className="form__txt" htmlFor="name">Nombre:</label>
-          <input className="form__input"
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <div className="error">{errors.name}</div>
-        </div>
-        <div className="form__texto">
-          <label className="form__txt" htmlFor="lname">Apellido:</label>
-          <input className="form__input"
-            type="text"
-            id="lname"
-            name="lname"
-            value={formData.lname}
-            onChange={handleChange}
-          />
-          <div className="error">{errors.lname}</div>
-        </div>
-        <div className="form__texto">
-          <label className="form__txt" htmlFor="email">Email:</label>
-          <input className="form__input"
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <div className="error">{errors.email}</div>
-        </div>
-        <div className="form__texto">
-          <label className="form__txt" htmlFor="phone">Telefono:</label>
-          <input className="form__input"
-            type="text"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-          />
-          <div className="error">{errors.phone}</div>
-        </div>
-        <div className="form__texto">
-          <label className="form__txt" htmlFor="message">Mensaje:</label>
-          <textarea className="form__input"
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-          />
-          <div className="error">{errors.message}</div>
-        </div>
-
-        <button className="form__boton" type="submit">Submit</button>
+    <>
+      <div className="portada-imagen">
+        <img src={contacto} alt="" />
       </div>
-    </form>
+      <form className="formulario" onSubmit={handleSubmit}>
+        <h1>Contactanos</h1>
+        <div className="formulario__estilo">
+          <div className="form__texto">
+            <label className="form__txt " htmlFor="name">Nombre:</label>
+            <input className="form__input"
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <div className="error">{errors.name}</div>
+          </div>
+          <div className="form__texto">
+            <label className="form__txt" htmlFor="lname">Apellido:</label>
+            <input className="form__input"
+              type="text"
+              id="lname"
+              name="lname"
+              value={formData.lname}
+              onChange={handleChange}
+            />
+            <div className="error">{errors.lname}</div>
+          </div>
+          <div className="form__texto">
+            <label className="form__txt" htmlFor="email">Email:</label>
+            <input className="form__input"
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <div className="error">{errors.email}</div>
+          </div>
+          <div className="form__texto">
+            <label className="form__txt" htmlFor="phone">Telefono:</label>
+            <input className="form__input"
+              type="text"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <div className="error">{errors.phone}</div>
+          </div>
+          <div className="form__texto">
+            <label className="form__txt" htmlFor="message">Mensaje:</label>
+            <textarea className="form__input"
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
+            <div className="error">{errors.message}</div>
+          </div>
+
+          <button className="form__boton" type="submit">Enviar</button>
+        </div>
+      </form>
+    </>
   );
 };
 

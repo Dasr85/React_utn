@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Propuesta.css'
+import copas from '../../assets/img/copas.jpg';
 import camion from '../../assets/img/camion.png';
 import botella from '../../assets/img/botella de vino.png';
 import copa from '../../assets/img/copa de vino.png';
@@ -53,53 +54,60 @@ const GestionPropuesta = () => {
     // };
 
     return (
-        <div className='contenedor-propuesta'>
-            <h1 className='titulo'>Propuestas para socios</h1>
-            <p><span>Recibí una caja de 6 vinos exclusivos
-            todos los meses en tu domicilio</span> </p>
-
-            <div className="container1">
-                <div className="card">
-                    <figure>
-                        <img src={botella}/>
-                    </figure>
-                    <div className="contenido1">
-                        <h3>ETIQUETAS EXCLUSIVAS</h3>
-                        <p>Etiquetas Originales de las mejores bodegas de Argentina y exclusivamente creadas para los socios del Club.</p>
-                    </div>
-                </div>
+        <>  
+            <div className='portada'>
+                <img src={copas} alt="" />
+            </div>
+            
+            <div className='contenedor-propuesta'>
                 
-                <div className="card">
-                    <figure>
-                        <img src={copa}/>
-                    </figure>
-                    <div className="contenido1">
-                        <h3>CATAS Y EVENTOS</h3>
-                    <p>Se parte de Eventos exclusivos para nuestros socios. Degustaciones gratuitas, charlas con enólogos reconocidos y más eventos</p>
+                <h1 className='titulo'>Propuestas para socios</h1>
+                <p><span>Recibí una caja de 6 vinos exclusivos
+                todos los meses en tu domicilio</span> </p>
+
+                <div className="container1">
+                    <div className="card">
+                        <figure>
+                            <img src={botella}/>
+                        </figure>
+                        <div className="contenido1">
+                            <h3>ETIQUETAS EXCLUSIVAS</h3>
+                            <p>Etiquetas Originales de las mejores bodegas de Argentina y exclusivamente creadas para los socios del Club.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div className="card">
-                    <figure>
-                        <img src={camion}/>
-                    </figure>
-                    <div className="contenido1">
-                        <h3>BONIFICACIONES EN ENVIO</h3>
-                        <p>Recibí una caja de seis vinos mensualmente y aprovechá 50% de Descuento en el costo de envío.</p>
+                    
+                    <div className="card">
+                        <figure>
+                            <img src={copa}/>
+                        </figure>
+                        <div className="contenido1">
+                            <h3>CATAS Y EVENTOS</h3>
+                        <p>Se parte de Eventos exclusivos para nuestros socios. Degustaciones gratuitas, charlas con enólogos reconocidos y más eventos</p>
+                        </div>
                     </div>
-                </div> 
-            </div>   
+
+                    <div className="card">
+                        <figure>
+                            <img src={camion}/>
+                        </figure>
+                        <div className="contenido1">
+                            <h3>BONIFICACIONES EN ENVIO</h3>
+                            <p>Recibí una caja de seis vinos mensualmente y aprovechá 50% de Descuento en el costo de envío.</p>
+                        </div>
+                    </div> 
+                </div>   
 
 
-            {/* Lista de Vinos
-            <ListaDeVinos
-                vinos={vinos}
-                completarVino={completarVino}
-                eliminarVino={eliminarVino}
-            />
-            {/* Formulario para agregar nuevos Vinos */}
-            {/* <FormularioDeVinos agregarVino={agregarVino} /> */} 
-        </div>
+                {/* Lista de Vinos
+                <ListaDeVinos
+                    vinos={vinos}
+                    completarVino={completarVino}
+                    eliminarVino={eliminarVino}
+                />
+                {/* Formulario para agregar nuevos Vinos */}
+                {/* <FormularioDeVinos agregarVino={agregarVino} /> */} 
+            </div>
+        </>
     );
     };
 
