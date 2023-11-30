@@ -86,7 +86,6 @@ form h1 {
 }
 
 .form__boton{
-    background-color: rgb(224, 143, 143);
     align-self: center;
     padding: var(--spacing-8);
     padding: 10px 20px;

@@ -5,7 +5,7 @@ import Seccion from './componentes/seccion/seccion';
 import Footer from './componentes/footer/footer';
 import GestionPropuesta from './componentes/propuesta/GestionPropuesta';
 import ContactForm from './componentes/contacto/contacto';
-import gestionVino from './componentes/listaVino/gestionVino';
+/*import gestionVino from './componentes/listaVino/gestionVino';*/
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Seccion />} />
             <Route path="/Propuesta" element={<GestionPropuesta />} />
-            <Route path="/Lista" element={<gestionVino />} /> 
+            {/* <Route path="/Lista" element={<gestionVino />} />  */}
             <Route path="/Contacto" element={<ContactForm />} />
           </Routes>
         </main>

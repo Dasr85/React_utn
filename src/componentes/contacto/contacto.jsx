@@ -102,7 +102,6 @@ const ContactForm = () => {
               type="text"
               id="name"
               name="name"
-              placeholder="Nombre"
               value={formData.name}
               onChange={handleChange}
             />
@@ -114,7 +113,6 @@ const ContactForm = () => {
               type="text"
               id="lname"
               name="lname"
-              placeholder="Apellido"
               value={formData.lname}
               onChange={handleChange}
             />
@@ -126,7 +124,6 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Correo"
               value={formData.email}
               onChange={handleChange}
             />
@@ -138,7 +135,6 @@ const ContactForm = () => {
               type="text"
               id="phone"
               name="phone"
-              placeholder="Número de teléfono"
               value={formData.phone}
               onChange={handleChange}
             />
@@ -155,7 +151,7 @@ const ContactForm = () => {
             <div className="error">{errors.message}</div>
           </div>
 
-          <button className="form__boton" type="submit">Submit</button>
+          <button className="form__boton" type="submit">Enviar</button>
         </div>
       </form>
     </>
