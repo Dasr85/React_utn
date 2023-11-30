@@ -35,7 +35,17 @@
 
 
 .container {
-    padding: 8rem 0;
+    padding: 2rem 0;
+}
+
+.container p {
+    text-align: justify;
+    padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .container p {
+        
+    }
 }
 
 .container h3 {
@@ -56,6 +66,7 @@
     text-align: center;
 
 }
+
 p{
     font-family: var(--alternative-font);
     font-size:var(--font-large);
