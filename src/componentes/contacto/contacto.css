@@ -83,6 +83,8 @@ form h1 {
     font-size: var(--font-small);
     font-weight: 500;
     text-decoration: none;
+    background-color: #eae8e8;
+    color: #2B2E37;
 }
 
 .form__boton{
@@ -98,3 +100,4 @@ form h1 {
     border-bottom: 2px solid var(--dark-bg-solid);
     border-radius: 25px;
 }
+

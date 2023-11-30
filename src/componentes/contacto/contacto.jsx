@@ -119,7 +119,7 @@ const ContactForm = () => {
             <div className="error">{errors.lname}</div>
           </div>
           <div className="form__texto">
-            <label className="form__txt" htmlFor="email">Email:</label>
+            <label className="form__txt" htmlFor="email">Email:    </label>
             <input className="form__input"
               type="email"
               id="email"
@@ -142,7 +142,7 @@ const ContactForm = () => {
           </div>
           <div className="form__texto">
             <label className="form__txt" htmlFor="message">Mensaje:</label>
-            <textarea className="form__input"
+            <textarea className="form__input text_area"
               id="message"
               name="message"
               value={formData.message}

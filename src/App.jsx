@@ -5,7 +5,7 @@ import Seccion from './componentes/seccion/seccion';
 import Footer from './componentes/footer/footer';
 import GestionPropuesta from './componentes/propuesta/GestionPropuesta';
 import ContactForm from './componentes/contacto/contacto';
-import WineApp from './WineApp';
+import WineApp from '../src/componentes/lista/WineApp';
 
 function App() {
 
