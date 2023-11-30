@@ -75,7 +75,7 @@ html {
 }
 
 .navegacion ul {
-    display: flex;
+    display: flex; 
 }
 
 .navegacion ul li { 
