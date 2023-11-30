@@ -56,7 +56,7 @@
     text-align: center;
 
 }
-p{
+.parrafo{
     font-family: var(--alternative-font);
-    font-size:var(--font-large);
+    font-size:var(--font-medium);
 }
