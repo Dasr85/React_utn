@@ -1,161 +1,155 @@
 import React, { useState } from "react";
 import "./contacto.css";
-import contacto from "../../assets/img/contacto.jpg"
+import contacto from "../../assets/img/contacto.jpg";
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    lname: "",
-    email: "",
-    phone: "",
-    message: "",
+
+function ContactForm() {
+  const [formValues, setFormValues] = useState({
+    nombre: '',
+    apellido: '',
+    email: '',
+    telefono: '',
+    mensaje: '',
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    lname: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setErrors({
-      ...errors,
-      [name]: "", // Clear previous errors when user starts typing
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form validation
-    let formValid = true;
+    const validationErrors = validateForm(formValues);
+    setErrors(validationErrors);
 
-    // Nombre validation
-    const nameRegex = /^[a-zA-ZÀ-ÿ\s]{1,20}$/;
-    if (!nameRegex.test(formData.name)) {
-      setErrors({
-        ...errors,
-        name: "Por favor ingrese su nombre, este campo solo admite letras",
-      });
-      formValid = false;
+    if (Object.keys(validationErrors).length === 0) {
+      console.log('Formulario enviado:', formValues);
+      setSuccessMessage('Mensaje enviado con éxito');
+      setFormValues({ nombre: '',apellido: '', email: '',telefono: '', mensaje: '' });
     }
-    // Apellido validation
-    const lnameRegex = /^[A-Za-z]{1,20}$/;
-    if (!lnameRegex.test(formData.lname)) {
-      setErrors({
-        ...errors,
-        lname: "Por favor ingrese su apellido, este campo solo admite letras",
-      });
-      formValid = false;
+  };
+
+  const validateForm = (values) => {
+    let errors = {};
+
+    if (!values.nombre.trim()) {
+      errors.nombre = 'El nombre es requerido';
     }
-    // Email validation
+
+    if (!values.apellido.trim()) {
+      errors.apellido = 'El apellido es requerido';
+    }
+    if (!values.email.trim()) {
+      errors.email = 'El email es requerido';
+    } else if (!isValidEmail(values.email)) {
+      errors.email = 'Ingresa un email válido';
+    }
+
+    if (!values.telefono.trim()) {
+      errors.telefono = 'El telefono es requerido';
+    } else if (!isValidPhone(values.telefono)) {
+      errors.telefono = 'Ingresa un telefono válido';
+    }
+
+    if (!values.mensaje.trim()) {
+      errors.mensaje = 'El mensaje es requerido';
+    }
+
+    return errors;
+  };
+
+  const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setErrors({
-        ...errors,
-        email: "Por favor ingrese un email valido",
-      });
-      formValid = false;
-    }
-    // Telefono validation
-    const phoneRegex = /^\d{7,14}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      setErrors({
-        ...errors,
-        phone: "Por favor ingrese un numero de telefono valido",
-      });
-      formValid = false;
-    }
-    // Message validation
-    if (formData.message.trim() === "") {
-      setErrors({
-        ...errors,
-        message: "Por favor ingrese un mensaje",
-      });
-      formValid = false;
-    }
-
-    // If form is valid, you can proceed with submitting the data
-    if (formValid) {
-      // Perform your submit logic here
-      console.log("Form submitted:", formData);
-    }
+    return emailRegex.test(email);
+  };
+    const isValidPhone = (telefono) => {
+    const telefonoRegex = /^\d{7,14}$/;
+    return telefonoRegex.test(telefono);
   };
 
   return (
     <>
-      <div className="portada-imagen">
-        <img src={contacto} alt="" />
-      </div>
-      <form className="formulario" onSubmit={handleSubmit}>
-        <h1>Contactanos</h1>
-        <div className="formulario__estilo">
-          <div className="form__texto">
-            <label className="form__txt " htmlFor="name">Nombre:</label>
-            <input className="form__input"
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <div className="error">{errors.name}</div>
-          </div>
-          <div className="form__texto">
-            <label className="form__txt" htmlFor="lname">Apellido:</label>
-            <input className="form__input"
-              type="text"
-              id="lname"
-              name="lname"
-              value={formData.lname}
-              onChange={handleChange}
-            />
-            <div className="error">{errors.lname}</div>
-          </div>
-          <div className="form__texto">
-            <label className="form__txt" htmlFor="email">Email:    </label>
-            <input className="form__input"
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <div className="error">{errors.email}</div>
-          </div>
-          <div className="form__texto">
-            <label className="form__txt" htmlFor="phone">Telefono:</label>
-            <input className="form__input"
-              type="text"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-            />
-            <div className="error">{errors.phone}</div>
-          </div>
-          <div className="form__texto">
-            <label className="form__txt" htmlFor="message">Mensaje:</label>
-            <textarea className="form__input text_area"
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-            />
-            <div className="error">{errors.message}</div>
-          </div>
+    <div className="portada-imagen">
+      <img src={contacto} alt="" />
+    </div>
+    <section>
+      <div className="container">
+        <form className="formulario" onSubmit={handleSubmit}>
+        <h1>CONTACTANOS</h1>
+          <div>
+            <div className="form__texto">
+              <label className="form__txt" htmlFor="nombre">Nombre:</label>
+              <input className="form__input"
+                type="text"
+                id="nombre"
+                name="nombre"
+                value={formValues.nombre}
+                onChange={handleChange}
+              />
+              {errors.nombre && <span className="error">{errors.nombre}</span>}
+            </div>
 
+            <div className="form__texto">
+              <label className="form__txt" htmlFor="apellido">Apellido:</label>
+              <input className="form__input"
+                type="text"
+                id="apellido"
+                name="apellido"
+                value={formValues.apellido}
+                onChange={handleChange}
+              />
+              {errors.apellido && <span className="error">{errors.apellido}</span>}
+            </div>
+            <div className="form__texto">
+              <label className="form__txt" htmlFor="email">Email:</label>
+              <input className="form__input"
+                type="email"
+                id="email"
+                name="email"
+                value={formValues.email}
+                onChange={handleChange}
+              />
+              {errors.email && <span className="error">{errors.email}</span>}
+            </div>
+          </div>
+  
+          <div className="form__texto">
+              <label className="form__txt" htmlFor="telefono">Teléfono:</label>
+              <input className="form__input"
+                type="text"
+                id="telefono"
+                name="telefono"
+                value={formValues.telefono}
+                onChange={handleChange}
+              />
+              {errors.telefono && <span className="error">{errors.telefono}</span>}
+            </div>
+
+          <div className="form__texto">
+            <label className="form__txt" htmlFor="mensaje">Mensaje:</label>
+            <textarea className="form__input text_area"
+              id="mensaje"
+              name="mensaje"
+              value={formValues.mensaje}
+              onChange={handleChange}
+            />
+            {errors.mensaje && <span className="error">{errors.mensaje}</span>}
+          </div>
+  
           <button className="form__boton" type="submit">Enviar</button>
-        </div>
-      </form>
+        </form>
+        {successMessage && (
+          <p className="success-message">{successMessage}</p>
+        )}
+      </div>
+    </section>
     </>
   );
-};
+        }
 
 export default ContactForm;
