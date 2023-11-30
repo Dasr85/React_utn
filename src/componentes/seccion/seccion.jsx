@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../assets/img/woman-vinos.jpg';
+import img from '../../assets/img/woman.jpg';
 import brindis from '../../assets/img/brindis.jpg';
 import martin from '../../assets/img/Martin R.jpg';
 import rocio from '../../assets/img/Rocio F.jpg';
