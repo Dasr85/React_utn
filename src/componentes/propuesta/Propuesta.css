@@ -3,6 +3,11 @@
     width: 95%;
     margin: 0 auto;
 }
+.portada img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
 .contenedor-propuesta p {
     font-size: 2rem;
 }
