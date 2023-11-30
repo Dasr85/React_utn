@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
-export const NewTask = ({ setOpen, setTarea, tarea, title }) => {
+export const NewTask = ({ setOpen, setVino, tarea, title }) => {
     const [Task, setTask] = useState('')
 
     const AccionTask = () => {
@@ -13,7 +13,7 @@ export const NewTask = ({ setOpen, setTarea, tarea, title }) => {
             const filterTask = tarea.filter(item => item.task !== Task)
             filterTask.push(findTask)
 
-            setTarea(filterTask)
+            setVino(filterTask)
             setOpen(false);
             return
         }
@@ -27,7 +27,7 @@ export const NewTask = ({ setOpen, setTarea, tarea, title }) => {
 
             setOpen(false);
 
-            setTarea([...[data], ...tarea])
+            setVino([...[data], ...tarea])
         }else{
             alert('Este campo es requerido')
         }
@@ -35,7 +35,7 @@ export const NewTask = ({ setOpen, setTarea, tarea, title }) => {
     return (
         <Form>
             <Form.Group controlId="formBasicEmail">
-                <Form.Label>{title ? 'Editar tarea' : 'Agregar Vinos'}</Form.Label>
+                <Form.Label>{title ? 'Editar vino' : 'Agregar Vinos'}</Form.Label>
                 <Form.Control type="text" defaultValue={title} placeholder="Agregue su Vino" onChange={event => setTask(event.target.value)} />
             </Form.Group>
 
