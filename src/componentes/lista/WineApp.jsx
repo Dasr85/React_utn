@@ -28,6 +28,7 @@ function WineApp() {
         <img src={lista} alt="" />
       </div>
       <div className="container">
+        <p>En esta seccion invitamos a nuestros socios a realizar la carga de la lista de vinos que les gustaria degustar y probar. Acto seguido, de la lista realizada les pedimos que seleccionen los 6 vinos que estaran recibiendo en su proxima entrega.</p>
         <h3 className="text-center p-2">Lista de Vinos</h3>
         <div className="row justify-content-center"></div>
         <div className="row justify-content-center mt-4">
@@ -52,7 +53,7 @@ function WineApp() {
           </div>
         </div>
 
-        <h3 className="p-2">Agregados</h3>
+        <h3 className="p-2">Vinos seleccionados para tu proxima entrega:</h3>
         <div className="row justify-content-center mt-4">
           {filterWine(true).map(item => (
             <div className="col-12 col-md-7 mb-3" key={item.id}>
