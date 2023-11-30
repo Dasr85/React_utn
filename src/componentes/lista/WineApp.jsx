@@ -5,6 +5,9 @@ import { SeccionWine } from './SeccionWine';
 import { Alert } from 'react-bootstrap';
 import { ModalElement } from './Modal';
 import { NewWine } from './NewWine'; 
+import lista from '../../assets/img/lista.jpg';
+import './WineApp.css';
+
 
 function WineApp() {
   const [visible, setVisible] = useState(false);
@@ -21,6 +24,9 @@ function WineApp() {
 
   return (
     <>
+      <div className="lista">
+        <img src={lista} alt="" />
+      </div>
       <div className="container">
         <h3 className="text-center p-2">Lista de Vinos</h3>
         <div className="row justify-content-center"></div>
@@ -32,7 +38,7 @@ function WineApp() {
           ))}
 
           {!filterWine(false).length && (
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-md-7 agrandar-texto">
               <Alert variant='danger'>
                 No hay Vinos Agregados
               </Alert>
@@ -42,7 +48,7 @@ function WineApp() {
 
         <div className="row justify-content-center mt-4">
           <div className="col-5">
-            <button className="btn btn-info form-control" onClick={() => setVisible(true)}>Nuevo Vino</button>
+            <button className="btn btn-info form-control agrandar-texto" onClick={() => setVisible(true)}>Nuevo Vino</button>
           </div>
         </div>
 
