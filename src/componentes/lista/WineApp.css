@@ -66,8 +66,7 @@
     text-align: center;
 
 }
-
 p{
     font-family: var(--alternative-font);
-    font-size:var(--font-large);
+    font-size:var(--font-medium);
 }

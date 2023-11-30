@@ -28,7 +28,7 @@ function WineApp() {
         <img src={lista} alt="" />
       </div>
       <div className="container">
-        <p>En esta seccion invitamos a nuestros socios a realizar la carga de la lista de vinos que les gustaria degustar y probar. Acto seguido, de la lista realizada les pedimos que seleccionen los 6 vinos que estaran recibiendo en su proxima entrega.</p>
+        <p className='parrafo'>En esta seccion invitamos a nuestros socios a realizar la carga de la lista de vinos que les gustaria degustar y probar. Acto seguido, de la lista realizada les pedimos que seleccionen los 6 vinos que estaran recibiendo en su proxima entrega.</p>
         <h3 className="text-center p-2">Lista de Vinos</h3>
         <div className="row justify-content-center"></div>
         <div className="row justify-content-center mt-4">
