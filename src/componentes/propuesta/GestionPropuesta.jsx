@@ -3,8 +3,8 @@ import './Propuesta.css'
 import camion from '../../assets/img/camion.png';
 import botella from '../../assets/img/botella de vino.png';
 import copa from '../../assets/img/copa de vino.png';
-import ListaDeVinos from './ListaDeVinos';
-import FormularioDeVinos from './FormularioDeVinos';
+// import ListaDeVinos from './ListaDeVinos';
+// import FormularioDeVinos from './FormularioDeVinos';
 
 const GestionPropuesta = () => {
     // Estado para almacenar las vinos
@@ -13,7 +13,7 @@ const GestionPropuesta = () => {
     // Carga inicial de vinos desde localStorage
     useEffect(() => {
         try {
-            const vinosGuardados = JSON.parse(localStorage.getItem('pociones'));
+            const vinosGuardados = JSON.parse(localStorage.getItem('vinos'));
             console.log('Vinos cargados:', vinosGuardados);
             if (vinosGuardados) {
                 setVinos(vinosGuardados);
@@ -28,29 +28,29 @@ const GestionPropuesta = () => {
         localStorage.setItem('vinos', JSON.stringify(vinos));
     }, [vinos]);
 
-    // Marcar un vino como completada o no completada
-    const completarVino = (id) => {
-        const nuevosVinos = vinos.map((vino) =>
-        vino.id === id ? { ...vino, completada: !vino.completada } : vino
-        );
-        setVinos(nuevosVinos);
-    };
+    // // Marcar un vino como completada o no completada
+    // const completarVino = (id) => {
+    //     const nuevosVinos = vinos.map((vino) =>
+    //     vino.id === id ? { ...vino, completada: !vino.completada } : vino
+    //     );
+    //     setVinos(nuevosVinos);
+    // };
 
-    // Eliminar un vino de la lista
-    const eliminarVino = (id) => {
-        const nuevosVinos = vinos.filter((vino) => vino.id !== id);
-        setVinos(nuevosVinos);
-    };
+    // // Eliminar un vino de la lista
+    // const eliminarVino = (id) => {
+    //     const nuevosVinos = vinos.filter((vino) => vino.id !== id);
+    //     setVinos(nuevosVinos);
+    // };
 
-    // Agregar una nuevo vino a la lista
-    const agregarVino = (nombre) => {
-        const nuevoVino = {
-        id: Date.now(), // Generar ID único
-        nombre,
-        completada: false,
-        };
-        setVinos([...vinos, nuevoVino]);
-    };
+    // // Agregar una nuevo vino a la lista
+    // const agregarVino = (nombre) => {
+    //     const nuevoVino = {
+    //     id: Date.now(), // Generar ID único
+    //     nombre,
+    //     completada: false,
+    //     };
+    //     setVinos([...vinos, nuevoVino]);
+    // };
 
     return (
         <div className='contenedor-propuesta'>
@@ -91,14 +91,14 @@ const GestionPropuesta = () => {
             </div>   
 
 
-            {/* Lista de Vinos */}
+            {/* Lista de Vinos
             <ListaDeVinos
                 vinos={vinos}
                 completarVino={completarVino}
                 eliminarVino={eliminarVino}
             />
             {/* Formulario para agregar nuevos Vinos */}
-            <FormularioDeVinos agregarVino={agregarVino} />
+            {/* <FormularioDeVinos agregarVino={agregarVino} /> */} 
         </div>
     );
     };
